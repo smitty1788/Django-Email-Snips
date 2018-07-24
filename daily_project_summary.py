@@ -33,9 +33,9 @@ def daily_project_summary(person, message):
     msg.attach(MIMEText(message, "html"))
     
     # Send Email
-    server = smtplib.SMTP("colomx2.novoco.com", 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login("gis-requests@novoco.com", "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
@@ -58,9 +58,9 @@ def project_overdue_check(person, days, message):
     msg.attach(MIMEText(message, "html"))
     
     # Send Email
-    server = smtplib.SMTP("colomx2.novoco.com", 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login("gis-requests@novoco.com", "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
