@@ -37,9 +37,9 @@ def fieldwork_complete_reminder(person, fieldwork):
     msg.attach(MIMEText(message, "html"))
 
     # Send Email
-    server = smtplib.SMTP("colomx2.novoco.com", 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login("gis-requests@novoco.com", "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
@@ -68,9 +68,9 @@ def fieldwork_no_date(person, fieldwork):
     msg.attach(MIMEText(message, "html"))
     
     # Send Email
-    server = smtplib.SMTP("colomx2.novoco.com", 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login("gis-requests@novoco.com", "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
