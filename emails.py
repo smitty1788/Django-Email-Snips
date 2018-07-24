@@ -72,9 +72,9 @@ def project_created(opportunity_obj, employee, attachment=[]):
             part['Content-Disposition'] = 'attachment; filename="%s"' % basename
             msg.attach(part)
             
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, ['goval-new-engmt@novoco.com', employee.email], text)
     server.quit()
@@ -150,9 +150,9 @@ def deltek_update(opportunity_obj, deltek, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, final_toaddr, text)
     server.quit()
@@ -182,9 +182,9 @@ def assigned_to_project(opportunity_obj, value, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
@@ -207,9 +207,9 @@ def assigned_self(opportunity_record, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, [toaddr, employee.email], text)
     server.quit()
@@ -232,9 +232,9 @@ def manager_review(opportunity_record, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, [toaddr, employee.email], text)
     server.quit()
@@ -257,9 +257,9 @@ def partner_review(opportunity_record, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, [toaddr, employee.email], text)
     server.quit()
@@ -293,9 +293,9 @@ def project_complete(opportunity_obj, employee):
 
     msg.attach(MIMEText(message, 'html'))
 
-    server = smtplib.SMTP('colomx2.novoco.com', 587)
+    server = smtplib.SMTP('SERVER', PORT)
     server.starttls()
-    server.login('gis-requests@novoco.com', "x@qYv4ZE!j5AF3%8sXlhmWUbo")
+    server.login('EMAIL', "PW")
     text = msg.as_string()
     server.sendmail(fromaddr, final_toaddr, text)
     server.quit()
